@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Genk</string>
+    <string name="digite_seu_e_mail">Digite seu e-mail</string>
+    <string name="digite_sua_senha">Digite sua senha</string>
+    <string name="cadastrar_se">Cadastrar-se</string>
+    <string name="login">Login</string>
 </resources>
