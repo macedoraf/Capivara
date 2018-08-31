@@ -2,12 +2,13 @@ package br.com.fiap.genk.genk.model.entity;
 
 
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity
 public class Pergunta {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int id;
 
     private String titulo;
@@ -20,13 +21,16 @@ public class Pergunta {
 
     private String autor;
 
-    private boolean like;
+    private int like;
 
-
+    public int getLike() {
+        return like;
+    }
 
     public Pergunta() {
     }
 
+    @Ignore
     public Pergunta(String titulo, String topico, String descricao, String resposta, String autor) {
         this.titulo = titulo;
         this.topico = topico;
@@ -34,8 +38,8 @@ public class Pergunta {
         this.resposta = resposta;
         this.autor = autor;
     }
-
-    public Pergunta(int id, String titulo, String topico, String descricao, String resposta, String autor, boolean like) {
+    @Ignore
+    public Pergunta(int id, String titulo, String topico, String descricao, String resposta, String autor, int like) {
         this.id = id;
         this.titulo = titulo;
         this.topico = topico;
@@ -47,11 +51,11 @@ public class Pergunta {
 
 
 
-    public boolean isLike() {
+    public int isLike() {
         return like;
     }
 
-    public void setLike(boolean like) {
+    public void setLike(int like) {
         this.like = like;
     }
 

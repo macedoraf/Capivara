@@ -1,6 +1,5 @@
 package br.com.fiap.genk.genk.view.fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -13,6 +12,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.fiap.genk.genk.R;
@@ -27,6 +27,15 @@ public class FragmentListaAssuntos extends Fragment implements AdapterAssunto.As
     private List<Assunto> assuntoList;
     private MainActivity mActivity;
 
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        assuntoList = new ArrayList<>();
+        assuntoList.add(new Assunto(0,"teste 1",0));
+        assuntoList.add(new Assunto(0,"teste 2",0));
+        assuntoList.add(new Assunto(0,"teste 3",0));
+    }
 
     @Nullable
     @Override
