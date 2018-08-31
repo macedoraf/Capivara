@@ -10,7 +10,7 @@ import br.com.fiap.genk.genk.model.repository.dao.AssuntoDAO;
 import br.com.fiap.genk.genk.model.repository.dao.PerguntaDAO;
 import br.com.fiap.genk.genk.model.repository.dao.UsuarioDAO;
 
-@Database(entities = {Pergunta.class, Usuario.class, Assunto.class}, version = 1)
+@Database(entities = {Pergunta.class, Usuario.class, Assunto.class}, version = 2)
 public abstract class GenkDatabase extends RoomDatabase {
 
     public abstract PerguntaDAO perguntaDAO();

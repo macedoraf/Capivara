@@ -17,7 +17,7 @@ public class GenkApplication extends Application {
     public void onCreate() {
         super.onCreate();
         instace = this;
-        genkDatabase = Room.databaseBuilder(this, GenkDatabase.class, "Genk_db").build();
+        genkDatabase = Room.databaseBuilder(this, GenkDatabase.class, "Genk_db").fallbackToDestructiveMigration().build();
     }
 
 
