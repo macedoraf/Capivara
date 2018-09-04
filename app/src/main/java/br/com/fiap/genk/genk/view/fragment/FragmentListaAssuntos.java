@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -51,12 +52,15 @@ public class FragmentListaAssuntos extends Fragment implements AdapterAssunto.As
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mActivity = (MainActivity) getActivity();
+        mActivity.toolbar.setTitle("Assuntos");
         configuraAdapter();
         configuraRecyclerView();
         carregaDados();
+        setHasOptionsMenu(true);
     }
 
     private void carregaDados() {
+        assuntoList.clear();
         assuntoList.add(new Assunto(0, "teste 1", R.color.amarelo));
         assuntoList.add(new Assunto(0, "teste 2", R.color.amarelo_claro));
         adapterAssunto.notifyDataSetChanged();
@@ -83,5 +87,14 @@ public class FragmentListaAssuntos extends Fragment implements AdapterAssunto.As
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_assunto, menu);
         super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.action_add){
+            mActivity.montaViewCadastraAssunto();
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 }

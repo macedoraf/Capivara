@@ -1,5 +1,6 @@
 package br.com.fiap.genk.genk.view.activity;
 
+import android.graphics.Color;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 
 import br.com.fiap.genk.genk.R;
 import br.com.fiap.genk.genk.model.entity.Assunto;
+import br.com.fiap.genk.genk.view.fragment.FragmentCadastraPergunta;
 import br.com.fiap.genk.genk.view.fragment.FragmentListaAssuntos;
 import br.com.fiap.genk.genk.view.fragment.FragmentListaPerguntas;
 
@@ -28,8 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void configuraToolbar() {
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+        toolbar.setTitleTextColor(Color.WHITE);
 
 
     }
@@ -59,8 +60,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void montaViewCadastraPergunta() {
         final FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        FragmentListaAssuntos fragmentListaAssuntos = new FragmentListaAssuntos();
-        fragmentTransaction.replace(R.id.frame, fragmentListaAssuntos);
+        FragmentCadastraPergunta fragmentCadastraPergunta = new FragmentCadastraPergunta();
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.replace(R.id.frame, fragmentCadastraPergunta);
         fragmentTransaction.commit();
+    }
+
+    public void montaViewCadastraAssunto() {
+
     }
 }

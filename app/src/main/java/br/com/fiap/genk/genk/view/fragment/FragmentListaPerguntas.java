@@ -8,6 +8,9 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -41,6 +44,7 @@ public class FragmentListaPerguntas extends Fragment implements AdapterPergunta.
         mActivity = (MainActivity) getActivity();
         perguntaPresenter = new PerguntaPresenterImpl(this);
         perguntaList = new ArrayList<>();
+
     }
 
 
@@ -62,11 +66,15 @@ public class FragmentListaPerguntas extends Fragment implements AdapterPergunta.
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        mActivity.toolbar.setTitle("Perguntas");
+
         configuraRecyclerView();
 
         configuraAdapter();
 
         carregaDados();
+
+        setHasOptionsMenu(true);
 
 
     }
@@ -104,5 +112,19 @@ public class FragmentListaPerguntas extends Fragment implements AdapterPergunta.
     @Override
     public Context getContext() {
         return super.getContext();
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_assunto, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_add) {
+            mActivity.montaViewCadastraPergunta();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

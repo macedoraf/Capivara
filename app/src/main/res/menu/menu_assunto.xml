@@ -4,7 +4,7 @@
 
     <item
         android:title="Cadastrar"
-        android:id="@+id/action_cadastrar_assunto"
+        android:id="@+id/action_add"
         android:icon="@drawable/ic_action_cadastrar"
         app:showAsAction="always" />
 

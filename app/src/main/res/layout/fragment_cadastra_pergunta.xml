@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="10dp">
 
+    <TextView
+        android:layout_margin="5dp"
+        android:id="@+id/lblTituloTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Titulo:" />
+
+    <EditText
+        android:layout_margin="5dp"
+        android:id="@+id/edtTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Escreva o titulo da sua pergunta"
+        android:inputType="textPersonName" />
+
+
+    <TextView
+        android:layout_margin="5dp"
+        android:id="@+id/lblTituloAssunto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Escolha o tópico da sua pergunta" />
+
+    <Spinner
+        android:layout_margin="5dp"
+        android:id="@+id/spAssunto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.emrekose.recordbutton.RecordButton
+        android:id="@+id/btnRecord"
+        app:buttonGap="10dp"
+        app:buttonRadius="40dp"
+        app:maxMilisecond="10000"
+        app:progressColor="@color/colorPrimary"
+        app:progressStroke="15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_margin="10dp"
+        android:id="@+id/btnCadastrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar" />
 </LinearLayout>
