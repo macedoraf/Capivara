@@ -72,7 +72,7 @@ public class FragmentListaPerguntas extends Fragment implements AdapterPergunta.
     }
 
     private void carregaDados() {
-        perguntaPresenter.carregaPerguntas();
+        perguntaPresenter.carregaPerguntas(assunto);
     }
 
     private void configuraAdapter() {

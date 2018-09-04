@@ -16,8 +16,8 @@ public interface PerguntaDAO {
     @Query("SELECT * FROM pergunta")
     List<Pergunta> getAll();
 
-    @Query("SELECT * FROM pergunta WHERE :titulo LIKE titulo LIMIT 1")
-    Pergunta findByTitulo(String titulo);
+    @Query("SELECT * FROM pergunta WHERE :titulo LIKE titulo")
+    List<Pergunta> findByTitulo(String titulo);
 
     @Insert
     void insertAll(List<Pergunta> perguntas);
