@@ -3,4 +3,17 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+
+    <color name="branco">@android:color/white</color>
+    <color name="preto">@android:color/black</color>
+    <color name="amarelo">#dcd300</color>
+    <color name="amarelo_claro">#ffec8b</color>
+    <color name="cinza">#ff747474</color>
+    <color name="cinza_claro">#ffededed</color>
+    <color name="vermelho">#a80000</color>
+    <color name="verde">#008840</color>
+    <color name="azul">#003c6d</color>
+
+
 </resources>

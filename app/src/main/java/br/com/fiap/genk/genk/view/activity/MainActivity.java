@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import br.com.fiap.genk.genk.R;
+import br.com.fiap.genk.genk.model.entity.Assunto;
 import br.com.fiap.genk.genk.view.fragment.FragmentListaAssuntos;
+import br.com.fiap.genk.genk.view.fragment.FragmentListaPerguntas;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,11 +28,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void configuraToolbar() {
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
 
     }
 
     private void inicializaControles() {
         toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
     }
 
@@ -42,10 +48,12 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-    public void montaViewPergunta() {
+    public void montaViewPergunta(Assunto assunto) {
         final FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        FragmentListaAssuntos fragmentListaAssuntos = new FragmentListaAssuntos();
-        fragmentTransaction.replace(R.id.frame, fragmentListaAssuntos);
+        FragmentListaPerguntas fragmentListaPerguntas = new FragmentListaPerguntas();
+        fragmentListaPerguntas.setAssunto(assunto);
+        fragmentTransaction.replace(R.id.frame, fragmentListaPerguntas);
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
