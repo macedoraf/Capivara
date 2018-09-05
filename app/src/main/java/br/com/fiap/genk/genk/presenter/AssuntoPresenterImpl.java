@@ -2,6 +2,7 @@ package br.com.fiap.genk.genk.presenter;
 
 import android.os.AsyncTask;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.fiap.genk.genk.model.entity.Assunto;
@@ -61,6 +62,7 @@ public class AssuntoPresenterImpl implements AssuntoPresenter {
             @Override
             protected void onPostExecute(Boolean aBoolean) {
                 super.onPostExecute(aBoolean);
+                assuntoView.atualizaLista(null);
 
 
             }
@@ -92,5 +94,26 @@ public class AssuntoPresenterImpl implements AssuntoPresenter {
             }
         }.execute();
 
+    }
+
+    @Override
+    public void getUnique() {
+        new AsyncTask<Void, Void, Boolean>() {
+            List<Assunto> assuntoList = new ArrayList<>();
+
+            @Override
+            protected Boolean doInBackground(Void... voids) {
+                assuntoList.addAll(assuntoDAO.getAll());
+                assuntoView.atualizaLista(assuntoList);
+                return true;
+            }
+
+            @Override
+            protected void onPostExecute(Boolean aBoolean) {
+                super.onPostExecute(aBoolean);
+
+
+            }
+        }.execute();
     }
 }

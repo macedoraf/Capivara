@@ -16,7 +16,7 @@ public interface PerguntaDAO {
     @Query("SELECT * FROM pergunta")
     List<Pergunta> getAll();
 
-    @Query("SELECT * FROM pergunta WHERE :titulo LIKE titulo")
+    @Query("SELECT * FROM pergunta WHERE topico LIKE :titulo")
     List<Pergunta> findByTitulo(String titulo);
 
     @Insert
@@ -28,4 +28,6 @@ public interface PerguntaDAO {
     @Delete
     void delete(Pergunta product);
 
+    @Insert
+    void insert(Pergunta pergunta);
 }

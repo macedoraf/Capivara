@@ -1,55 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="10dp">
 
     <TextView
-        android:layout_margin="5dp"
         android:id="@+id/lblTituloTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:text="Titulo:" />
 
     <EditText
-        android:layout_margin="5dp"
         android:id="@+id/edtTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:ems="10"
         android:hint="Escreva o titulo da sua pergunta"
         android:inputType="textPersonName" />
 
 
     <TextView
-        android:layout_margin="5dp"
         android:id="@+id/lblTituloAssunto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Escolha o tópico da sua pergunta" />
+        android:layout_margin="5dp"
+        android:text="Escolha o tópico da sua pergunta"
+        android:visibility="gone" />
 
     <Spinner
-        android:layout_margin="5dp"
         android:id="@+id/spAssunto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:visibility="gone" />
 
     <com.emrekose.recordbutton.RecordButton
         android:id="@+id/btnRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:buttonGap="10dp"
         app:buttonRadius="40dp"
         app:maxMilisecond="10000"
         app:progressColor="@color/colorPrimary"
-        app:progressStroke="15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        app:progressStroke="15" />
 
     <Button
-        android:layout_margin="10dp"
-        android:id="@+id/btnCadastrar"
+        android:id="@+id/btnSalvar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="Cadastrar" />
 </LinearLayout>

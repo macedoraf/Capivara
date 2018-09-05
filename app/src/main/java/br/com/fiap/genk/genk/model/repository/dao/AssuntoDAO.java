@@ -25,4 +25,5 @@ public interface AssuntoDAO {
 
     @Delete
     void delete(Assunto assunto);
+
 }

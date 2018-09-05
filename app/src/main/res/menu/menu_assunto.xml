@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:title="Cadastrar"
         android:id="@+id/action_add"
         android:icon="@drawable/ic_action_cadastrar"
+        android:title="Cadastrar"
         app:showAsAction="always" />
+
 
 </menu>

@@ -28,7 +28,8 @@ public class AssuntoHolder extends RecyclerView.ViewHolder implements View.OnCli
     public void bind(Assunto assunto) {
         this.assunto = assunto;
         lblTitulo.setText(assunto.getTitulo());
-        cardView.setCardBackgroundColor(itemView.getContext().getResources().getColor(assunto.getCor()));
+        if (assunto.getCor() > 0)
+            cardView.setCardBackgroundColor(itemView.getContext().getResources().getColor(assunto.getCor()));
     }
 
     @Override

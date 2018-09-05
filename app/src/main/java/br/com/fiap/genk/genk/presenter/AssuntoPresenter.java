@@ -14,4 +14,6 @@ public interface AssuntoPresenter {
     void update(Assunto product);
 
     void delete(Assunto product);
+
+    void getUnique();
 }

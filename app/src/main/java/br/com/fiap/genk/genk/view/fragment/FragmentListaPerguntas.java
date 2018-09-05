@@ -25,6 +25,7 @@ import br.com.fiap.genk.genk.presenter.PerguntaPresenterImpl;
 import br.com.fiap.genk.genk.view.PerguntaView;
 import br.com.fiap.genk.genk.view.activity.MainActivity;
 import br.com.fiap.genk.genk.view.adapter.AdapterPergunta;
+import br.com.fiap.genk.genk.view.dialog.DialogResposta;
 
 public class FragmentListaPerguntas extends Fragment implements AdapterPergunta.PerguntaListener, PerguntaView {
     private Assunto assunto;
@@ -68,6 +69,8 @@ public class FragmentListaPerguntas extends Fragment implements AdapterPergunta.
 
         mActivity.toolbar.setTitle("Perguntas");
 
+        mActivity.toolbar.setSubtitle(assunto.getTitulo());
+
         configuraRecyclerView();
 
         configuraAdapter();
@@ -96,6 +99,15 @@ public class FragmentListaPerguntas extends Fragment implements AdapterPergunta.
     @Override
     public void onClick(Pergunta pergunta) {
 
+        mostraDialogDeRespostaDaPergunta(pergunta);
+
+    }
+
+    private void mostraDialogDeRespostaDaPergunta(Pergunta pergunta) {
+        DialogResposta dialogResposta = new DialogResposta();
+        dialogResposta.setPergunta(pergunta);
+        dialogResposta.show(getFragmentManager());
+
     }
 
     @Override
@@ -116,13 +128,13 @@ public class FragmentListaPerguntas extends Fragment implements AdapterPergunta.
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_assunto, menu);
+        inflater.inflate(R.menu.menu_pergunta, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_add) {
+        if (item.getItemId() == R.id.action_add_pergunta) {
             mActivity.montaViewCadastraPergunta();
         }
         return super.onOptionsItemSelected(item);

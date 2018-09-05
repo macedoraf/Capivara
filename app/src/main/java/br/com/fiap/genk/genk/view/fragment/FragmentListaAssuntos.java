@@ -18,21 +18,26 @@ import java.util.List;
 
 import br.com.fiap.genk.genk.R;
 import br.com.fiap.genk.genk.model.entity.Assunto;
+import br.com.fiap.genk.genk.presenter.AssuntoPresenter;
+import br.com.fiap.genk.genk.presenter.AssuntoPresenterImpl;
+import br.com.fiap.genk.genk.view.AssuntoView;
 import br.com.fiap.genk.genk.view.activity.MainActivity;
 import br.com.fiap.genk.genk.view.adapter.AdapterAssunto;
 
-public class FragmentListaAssuntos extends Fragment implements AdapterAssunto.AssuntoListener {
+public class FragmentListaAssuntos extends Fragment implements AdapterAssunto.AssuntoListener, AssuntoView {
 
     private RecyclerView recyclerView;
     private AdapterAssunto adapterAssunto;
     private List<Assunto> assuntoList;
     private MainActivity mActivity;
+    private AssuntoPresenter presenter;
 
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         assuntoList = new ArrayList<>();
+        presenter = new AssuntoPresenterImpl(this);
 
     }
 
@@ -53,6 +58,7 @@ public class FragmentListaAssuntos extends Fragment implements AdapterAssunto.As
         super.onActivityCreated(savedInstanceState);
         mActivity = (MainActivity) getActivity();
         mActivity.toolbar.setTitle("Assuntos");
+        mActivity.toolbar.setSubtitle("");
         configuraAdapter();
         configuraRecyclerView();
         carregaDados();
@@ -60,10 +66,7 @@ public class FragmentListaAssuntos extends Fragment implements AdapterAssunto.As
     }
 
     private void carregaDados() {
-        assuntoList.clear();
-        assuntoList.add(new Assunto(0, "teste 1", R.color.amarelo));
-        assuntoList.add(new Assunto(0, "teste 2", R.color.amarelo_claro));
-        adapterAssunto.notifyDataSetChanged();
+        presenter.getAll();
 
     }
 
@@ -91,10 +94,16 @@ public class FragmentListaAssuntos extends Fragment implements AdapterAssunto.As
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == R.id.action_add){
+        if (item.getItemId() == R.id.action_add) {
             mActivity.montaViewCadastraAssunto();
         }
         return super.onOptionsItemSelected(item);
 
+    }
+
+    @Override
+    public void atualizaLista(List<Assunto> assuntoList) {
+        this.assuntoList.addAll(assuntoList);
+        adapterAssunto.notifyDataSetChanged();
     }
 }

@@ -1,6 +1,7 @@
 package br.com.fiap.genk.genk.model.entity;
 
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity
@@ -22,6 +23,10 @@ public class Assunto {
     public Assunto(String titulo, int cor) {
         this.titulo = titulo;
         this.cor = cor;
+    }
+
+    public Assunto(String titulo) {
+        this.titulo = titulo;
     }
 
     public Assunto() {

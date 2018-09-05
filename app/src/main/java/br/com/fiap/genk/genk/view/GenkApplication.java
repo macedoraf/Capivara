@@ -34,4 +34,8 @@ public class GenkApplication extends Application {
     public void setUsuarioLogado(Usuario s) {
         usuarioLogado = s;
     }
+
+    public Usuario getUsuarioLogado() {
+        return usuarioLogado;
+    }
 }
