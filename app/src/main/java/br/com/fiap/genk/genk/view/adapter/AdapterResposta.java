@@ -27,6 +27,7 @@ public class AdapterResposta extends RecyclerView.Adapter<HolderResposta> {
     @Override
     public void onBindViewHolder(HolderResposta holder, int position) {
 
+
     }
 
     @Override
