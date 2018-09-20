@@ -26,6 +26,7 @@ public class AdapterResposta extends RecyclerView.Adapter<HolderResposta> {
 
     @Override
     public void onBindViewHolder(HolderResposta holder, int position) {
+        holder.bind(respostaList.get(position));
 
 
     }
@@ -35,7 +36,7 @@ public class AdapterResposta extends RecyclerView.Adapter<HolderResposta> {
         return respostaList.size();
     }
 
-    interface RespostaListener {
+    public interface RespostaListener {
         void onLinke();
     }
 }

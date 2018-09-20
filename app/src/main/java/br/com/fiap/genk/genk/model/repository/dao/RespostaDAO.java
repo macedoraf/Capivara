@@ -14,7 +14,7 @@ import br.com.fiap.genk.genk.model.entity.Resposta;
 @Dao
 public interface RespostaDAO {
 
-    @Query("SELECT * FROM Resposta WHERE codigoPergunta = :pergundaId")
+    @Query("SELECT * FROM Resposta WHERE codigoPergunta = :pergundaId ORDER BY codigo DESC")
     List<Resposta> getRespostas(int pergundaId);
 
     @Insert

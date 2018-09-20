@@ -1,8 +1,11 @@
 package br.com.fiap.genk.genk.view;
 
 import android.app.Application;
+import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Room;
+import android.arch.persistence.room.migration.Migration;
 import android.content.Context;
+import android.support.annotation.NonNull;
 
 import br.com.fiap.genk.genk.model.entity.Usuario;
 import br.com.fiap.genk.genk.model.repository.GenkDatabase;
