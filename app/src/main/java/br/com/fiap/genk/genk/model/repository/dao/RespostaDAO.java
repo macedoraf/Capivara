@@ -16,7 +16,6 @@ public interface RespostaDAO {
 
     @Query("SELECT * FROM Resposta WHERE codigoPergunta = :pergundaId ORDER BY codigo DESC")
     List<Resposta> getRespostas(int pergundaId);
-
     @Insert
     void insertResposta(Resposta resposta);
 

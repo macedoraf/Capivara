@@ -1,6 +1,7 @@
 package br.com.fiap.genk.genk.model.entity;
 
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity
@@ -18,12 +19,13 @@ public class Usuario {
     public Usuario() {
     }
 
+    @Ignore
     public Usuario(String nome, String email, String senha) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
     }
-
+    @Ignore
     public Usuario(int id, String nome, String email, String senha) {
         this.id = id;
         this.nome = nome;

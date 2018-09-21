@@ -23,6 +23,7 @@ import java.util.List;
 import br.com.fiap.genk.genk.R;
 import br.com.fiap.genk.genk.model.entity.Pergunta;
 import br.com.fiap.genk.genk.model.entity.Resposta;
+import br.com.fiap.genk.genk.model.entity.RespostaLike;
 import br.com.fiap.genk.genk.presenter.RespostaPresenter;
 import br.com.fiap.genk.genk.presenter.RespostaPresenterImpl;
 import br.com.fiap.genk.genk.view.GenkApplication;
@@ -48,7 +49,7 @@ public class DialogResposta extends DialogFragment implements View.OnClickListen
 
     private EditText edtResposta;
 
-    private List<Resposta> respostaList;
+    private List<RespostaLike> respostaList;
 
     private RespostaPresenter presenter;
 
@@ -80,12 +81,6 @@ public class DialogResposta extends DialogFragment implements View.OnClickListen
             mAlertDialog = new AlertDialog.Builder(mActivity)
                     .setView(mView)
                     .setIcon(null)
-                    .setPositiveButton("Salvar", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-
-                        }
-                    })
                     .create();
 
         } catch (Exception err) {
@@ -141,7 +136,7 @@ public class DialogResposta extends DialogFragment implements View.OnClickListen
     }
 
     @Override
-    public List<Resposta> getRespostaList() {
+    public List<RespostaLike> getRespostaList() {
         return respostaList;
     }
 

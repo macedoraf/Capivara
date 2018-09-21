@@ -14,17 +14,20 @@ public class Assunto {
 
     private int cor;
 
+    @Ignore
     public Assunto(int id, String titulo, int cor) {
         this.id = id;
         this.titulo = titulo;
         this.cor = cor;
     }
 
+    @Ignore
     public Assunto(String titulo, int cor) {
         this.titulo = titulo;
         this.cor = cor;
     }
 
+    @Ignore
     public Assunto(String titulo) {
         this.titulo = titulo;
     }

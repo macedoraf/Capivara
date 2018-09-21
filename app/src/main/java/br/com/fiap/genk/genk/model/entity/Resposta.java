@@ -17,6 +17,7 @@ public class Resposta {
 
     private int qtdLike;
 
+
     public String getAutor() {
         return autor;
     }

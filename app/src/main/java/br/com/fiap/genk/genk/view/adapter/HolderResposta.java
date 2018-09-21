@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import br.com.fiap.genk.genk.R;
 import br.com.fiap.genk.genk.model.entity.Resposta;
+import br.com.fiap.genk.genk.model.entity.RespostaLike;
 
 public class HolderResposta extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -32,11 +33,11 @@ public class HolderResposta extends RecyclerView.ViewHolder implements View.OnCl
 
     }
 
-    public void bind(Resposta res) {
-        resposta = res;
-        lblAutor.setText(res.getAutor());
-        lblResposta.setText(res.getTexto());
-        lblQtdLike.setText(String.valueOf(res.getQtdLike()));
+    public void bind(RespostaLike res) {
+        resposta = res.getResposta();
+        lblAutor.setText(res.getResposta().getAutor());
+        lblResposta.setText(res.getResposta().getTexto());
+        lblQtdLike.setText(String.valueOf(res.getResposta().getQtdLike()));
 
     }
 

@@ -8,13 +8,14 @@ import java.util.List;
 
 import br.com.fiap.genk.genk.R;
 import br.com.fiap.genk.genk.model.entity.Resposta;
+import br.com.fiap.genk.genk.model.entity.RespostaLike;
 
 public class AdapterResposta extends RecyclerView.Adapter<HolderResposta> {
 
-    private final List<Resposta> respostaList;
+    private final List<RespostaLike> respostaList;
     private final RespostaListener listener;
 
-    public AdapterResposta(List<Resposta> respostaList, RespostaListener listener) {
+    public AdapterResposta(List<RespostaLike> respostaList, RespostaListener listener) {
         this.respostaList = respostaList;
         this.listener = listener;
     }

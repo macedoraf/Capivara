@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void montaViewEncontros() {
-        Toast.makeText(this, "Não implementado", Toast.LENGTH_LONG).show();
+        startActivity(new Intent(this, MapsActivity.class));
     }
 
 
