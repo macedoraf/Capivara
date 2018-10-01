@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
     public void montaViewCadastraAssunto() {
         final FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         FragmentCadastraAssunto fragmentCadastraAssunto = new FragmentCadastraAssunto();
-        fragmentTransaction.addToBackStack("Encontros");
+        fragmentTransaction.addToBackStack("Assunto");
         fragmentTransaction.replace(R.id.frame, fragmentCadastraAssunto);
         fragmentTransaction.commit();
         closeDrawer();

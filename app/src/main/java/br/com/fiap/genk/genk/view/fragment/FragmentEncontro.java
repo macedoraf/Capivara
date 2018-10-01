@@ -8,9 +8,13 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,10 +58,11 @@ public class FragmentEncontro extends Fragment implements EncontroListener, Enco
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+        mActivity.toolbar.setTitle("Encontros");
         recyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
         mAdapter = new AdapterEncontro(encontroList, this);
         recyclerView.setAdapter(mAdapter);
+        setHasOptionsMenu(true);
 
     }
 
@@ -85,6 +90,25 @@ public class FragmentEncontro extends Fragment implements EncontroListener, Enco
     public void carregaDados(List<Encontro> encontroList) {
         encontroList.clear();
         encontroList.addAll(encontroList);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_add_encontro) {
+            showTelaAddEncontro();
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_encontro, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    private void showTelaAddEncontro() {
+        Toast.makeText(mActivity, "True ", Toast.LENGTH_SHORT).show();
     }
 
 
