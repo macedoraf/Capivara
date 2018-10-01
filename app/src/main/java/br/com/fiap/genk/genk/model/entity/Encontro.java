@@ -2,17 +2,39 @@ package br.com.fiap.genk.genk.model.entity;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.TypeConverters;
 
 import java.util.Calendar;
+import java.util.Date;
+
+import br.com.fiap.genk.genk.utill.DateTypeConverter;
 
 @Entity
 public class Encontro {
     @PrimaryKey
     private int codigo;
-    private Calendar dataHoraEncontro;
-    //TODO: COORDENADAS
+    @TypeConverters(DateTypeConverter.class)
+    private Date dataHoraEncontro;
+    private long latitude;
+    private long longetude;
     private int codigoUsuarioAutor;
-    //TODO: TABELA ASSOCIATIVA DE ENCONTROS X USUARIOS
+
+
+    public long getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(long latitude) {
+        this.latitude = latitude;
+    }
+
+    public long getLongetude() {
+        return longetude;
+    }
+
+    public void setLongetude(long longetude) {
+        this.longetude = longetude;
+    }
 
     public int getCodigo() {
         return codigo;
@@ -22,11 +44,12 @@ public class Encontro {
         this.codigo = codigo;
     }
 
-    public Calendar getDataHoraEncontro() {
+
+    public Date getDataHoraEncontro() {
         return dataHoraEncontro;
     }
 
-    public void setDataHoraEncontro(Calendar dataHoraEncontro) {
+    public void setDataHoraEncontro(Date dataHoraEncontro) {
         this.dataHoraEncontro = dataHoraEncontro;
     }
 

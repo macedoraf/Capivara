@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import br.com.fiap.genk.genk.R;
-import br.com.fiap.genk.genk.model.entity.Resposta;
 import br.com.fiap.genk.genk.model.entity.RespostaLike;
+import br.com.fiap.genk.genk.view.adapter.holder.HolderResposta;
 
 public class AdapterResposta extends RecyclerView.Adapter<HolderResposta> {
 

@@ -19,6 +19,7 @@ import br.com.fiap.genk.genk.model.entity.Assunto;
 import br.com.fiap.genk.genk.view.GenkApplication;
 import br.com.fiap.genk.genk.view.fragment.FragmentCadastraAssunto;
 import br.com.fiap.genk.genk.view.fragment.FragmentCadastraPergunta;
+import br.com.fiap.genk.genk.view.fragment.FragmentEncontro;
 import br.com.fiap.genk.genk.view.fragment.FragmentListaAssuntos;
 import br.com.fiap.genk.genk.view.fragment.FragmentListaPerguntas;
 
@@ -88,10 +89,21 @@ public class MainActivity extends AppCompatActivity {
         closeDrawer();
     }
 
+    public void motaViewEncontros() {
+        final FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        FragmentEncontro fragmentEncontro = new FragmentEncontro();
+        fragmentTransaction.addToBackStack("Encontro");
+        fragmentTransaction.replace(R.id.frame, fragmentEncontro);
+        fragmentTransaction.commit();
+        closeDrawer();
+
+    }
+
+
     public void montaViewCadastraAssunto() {
         final FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         FragmentCadastraAssunto fragmentCadastraAssunto = new FragmentCadastraAssunto();
-        fragmentTransaction.addToBackStack("Assunto");
+        fragmentTransaction.addToBackStack("Encontros");
         fragmentTransaction.replace(R.id.frame, fragmentCadastraAssunto);
         fragmentTransaction.commit();
         closeDrawer();
@@ -151,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void montaViewEncontros() {
-        startActivity(new Intent(this, MapsActivity.class));
+        motaViewEncontros();
     }
 
 
