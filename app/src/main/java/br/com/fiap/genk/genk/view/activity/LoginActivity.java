@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import br.com.fiap.genk.genk.R;
 import br.com.fiap.genk.genk.model.entity.Usuario;
-import br.com.fiap.genk.genk.model.repository.dao.UsuarioDAO;
 import br.com.fiap.genk.genk.presenter.UsuarioPresenter;
 import br.com.fiap.genk.genk.presenter.UsuarioPresenterImpl;
 import br.com.fiap.genk.genk.view.GenkApplication;

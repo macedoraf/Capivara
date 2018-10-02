@@ -32,6 +32,13 @@
                 android:text="TITULO DO ENCONTRO" />
 
             <TextView
+                android:id="@+id/lblEndereco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="Endereco" />
+
+            <TextView
                 android:id="@+id/lblDataHora"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

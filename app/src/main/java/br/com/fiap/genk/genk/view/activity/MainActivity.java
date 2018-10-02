@@ -145,9 +145,11 @@ public class MainActivity extends AppCompatActivity {
         switch (menuItem.getItemId()) {
             case R.id.menu_assunto:
                 montaViewAssuntos();
+                closeDrawer();
                 break;
             case R.id.menu_encontros:
                 montaViewEncontros();
+                closeDrawer();
                 break;
             case R.id.menu_logout:
                 logout();

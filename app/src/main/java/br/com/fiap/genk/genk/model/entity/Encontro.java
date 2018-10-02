@@ -11,30 +11,49 @@ import br.com.fiap.genk.genk.utill.DateTypeConverter;
 
 @Entity
 public class Encontro {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int codigo;
     @TypeConverters(DateTypeConverter.class)
     private Date dataHoraEncontro;
-    private long latitude;
-    private long longetude;
+    private double latitude;
+    private double longetude;
+    private String endereco;
     private int codigoUsuarioAutor;
+    private String titulo;
 
+    public String getTitulo() {
+        return titulo;
+    }
 
-    public long getLatitude() {
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(long latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public long getLongetude() {
+    public double getLongetude() {
         return longetude;
     }
 
-    public void setLongetude(long longetude) {
+    public void setLongetude(double longetude) {
         this.longetude = longetude;
     }
+
+
 
     public int getCodigo() {
         return codigo;
